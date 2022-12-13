@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users.apps.UsersConfig', # we put in bottom as it will use the other apps from above from users.model.custom user
 ]
+
+AUTH_USER_MODEL='users.CustomUser'#rather than using default user, using custom
+LOGIN_REDIRECT_URL = 'news:index'
+LOGOUT_REDIRECT_URL = 'news:index'
+LOGIN_URL = "login"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Australia/Perth'
+TIME_ZONE = 'Australia/Sydney'
 
 USE_I18N = True
 

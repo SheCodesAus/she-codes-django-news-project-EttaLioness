@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
-body {
-    background-color: rgb(240, 239, 239);
+/* body {
+    background-color: rgb(127, 10, 148);
 }
 
 header {
@@ -11,11 +11,11 @@ header {
     border-bottom: 1px solid #000;
 }
 
-img {
+/* img {
     filter: grayscale(100%);
-}
+} */
 
-h1 {
+/* h1 {
     font-family: 'Montserrat Subrayada', sans-serif;
     text-decoration: none;
     font-size: 4rem;
@@ -39,7 +39,7 @@ h3 {
 nav {
     flex-basis: 20%;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: flex-end;
 }
 
@@ -51,4 +51,51 @@ a {
 
 a, p {
     font-family: monospace;
-}
+} */ */
+
+.user-name, .author-name{
+    color:#4E9CAF;
+    font-size: 24px;
+    font-family: monospace;
+    text-transform: capitalize;
+  }
+  .profile-card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+      /* max-width: 300px; */
+      margin: auto;
+      text-align: left;
+      padding: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  
+    }
+    .user-profile-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+        margin: auto;
+        text-align: left;
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color:#FCD7DB;
+        
+        
+    
+      }
+    .section-title {
+        color:#4E9CAF;
+        font-size: 24px;
+        font-family: monospace;
+        text-transform: capitalize;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .card-author{
+        color:#4E9CAF;  
+      }
+
+      .avatar{
+        border-radius: 4px;
+        width: 150px;
+      }

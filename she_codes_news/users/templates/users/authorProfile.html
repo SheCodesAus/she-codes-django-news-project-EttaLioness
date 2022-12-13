@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock%}
+
+{% block content %}
+
+<div class="post_name">
+    {{ author.first_name }} {{ author.last_name }}
+ </div>
+
+ <div class="profile-card">
+    {% comment %} <img src="trees.jpeg" alt="trees"> {% endcomment %}
+    
+    {% comment %} <h4 id='author-name'>{{ user.username }}</h4> {% endcomment %}
+    {% if author %}
+        <h4 class='author-name'>{{ author.username }}</h4>
+        <p class="title">{{ author.email }}</p>
+        <p class="title">Author for She Codes</p>
+    {% endif %}
+    
+
+</div>
+
+<div class='section-title'>Stories from the author
+</div>
+
+{% for story in author.newsstory_set.all %}
+    {% comment %} {{ story.title }} {% endcomment %}
+    {% include "news/storyCard.html" with story=story %}
+{% endfor %}
+</div>
+
+{% endblock%}
+
+
+{% comment %} forloop.counter {% endcomment %}
