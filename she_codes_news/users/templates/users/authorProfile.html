@@ -2,17 +2,16 @@
 {% load static %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
 {% endblock%}
 
 {% block content %}
 
 <div class="post_name">
     {{ author.first_name }} {{ author.last_name }}
- </div>
+</div>
 
- <div class="profile-card">
-    {% comment %} <img src="trees.jpeg" alt="trees"> {% endcomment %}
+<div class="profile-card">
     
     {% comment %} <h4 id='author-name'>{{ user.username }}</h4> {% endcomment %}
     {% if author %}
@@ -24,9 +23,8 @@
 
 </div>
 
-<div class='section-title'>Stories from the author
-</div>
-
+<div class='section-title'>Stories from the author</div>
+<div>
 {% for story in author.newsstory_set.all %}
     {% comment %} {{ story.title }} {% endcomment %}
     {% include "news/storyCard.html" with story=story %}
@@ -36,4 +34,4 @@
 {% endblock%}
 
 
-{% comment %} forloop.counter {% endcomment %}
+<!-- {% comment %} forloop.counter {% endcomment %} -->

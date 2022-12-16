@@ -22,7 +22,6 @@ class AccountView(generic.DetailView):
         return self.request.user
     
 class AuthorProfileView(generic.DetailView):
-
     model = CustomUser
     template_name = 'users/authorProfile.html'
     context_object_name= 'author'
