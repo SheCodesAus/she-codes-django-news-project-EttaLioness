@@ -126,8 +126,16 @@
 
 h2, h3, h4, p{
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
+span {
+    color:rgb(240, 164, 0);
+}
+
+.welcomeNote{
+    padding: 2rem;
+}
 /* =================FORM PAGE========================================= 
 ==============================================================================*/
 #formImage {
@@ -137,9 +145,8 @@ h2, h3, h4, p{
     background-color:rgb(128, 70, 180);
     width: 100%;
     display: flex;
-    text-align: center;
+    /* text-align: center; */
     padding-bottom: 3%;
-    display: flex;
     justify-content: center;
     border: none;
 }
@@ -157,3 +164,4 @@ h2, h3, h4, p{
 #formContainer p{
     color: white;
 }
+

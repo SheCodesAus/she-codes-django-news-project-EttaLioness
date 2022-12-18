@@ -140,17 +140,9 @@ Fixed/sticky icon bar (vertically aligned 50% from the top of the screen)
     transition: all 0.3s ease;
     color: white;
     font-size: 20px;
+    background: rgb(240, 164, 0);
 }
 
-/* =================  social media icons =====================
-==============================================================*/
 .icon-bar a:hover {
     background-color: rgb(128, 70, 180);
-}
-
-.linkedin,
-.github,
-.twitter {
-    background: rgb(240, 164, 0);
-    color: white;
 }

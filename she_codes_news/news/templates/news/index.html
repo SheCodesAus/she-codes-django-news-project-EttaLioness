@@ -10,12 +10,16 @@
     <div class="sheCodesCelebrates">
         <img src="https://i.postimg.cc/dtJCghV5/SheCodes.jpg" alt="sheCodesCelebrates">
     </div>
+    <h3 class="welcomeNote">Welcome <span>{{ user.username }}</span>  </h3>
     
     <h2 class="latestNews">Latest News</h2>
+
     {% if request.user.is_authenticated %}
     <a class="createStoryLink" href="{% url 'news:newStory' %}">Write New Story</a>
     {% endif %}
     
+
+
     {% comment %} 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -28,6 +32,8 @@
     </div> 
     {% endcomment %}
 
+
+    
     <div id="all-stories">
         {% if all_stories %}
             {% for story in all_stories %}

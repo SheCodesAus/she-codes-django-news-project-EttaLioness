@@ -1,5 +1,7 @@
 from django.views import generic
 from django.urls import reverse_lazy
+# from django.contrib.auth.mixins import LoginRequiredMixin    Added by Ben
+
 from .models import NewsStory
 from .forms import StoryForm
 
