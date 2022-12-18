@@ -8,30 +8,50 @@
 {% block content %}
 
 <div class="post_name">
-    {{ author.first_name }} {{ author.last_name }}
+    
 </div>
 
 <div class="profile-card">
     
-    {% comment %} <h4 id='author-name'>{{ user.username }}</h4> {% endcomment %}
+    <h4 id='author-name'>Logged in username: {{ user.username }}</h4> 
     {% if author %}
-        <h4 class='author-name'>{{ author.username }}</h4>
-        <p class="title">{{ author.email }}</p>
-        <p class="title">Author for She Codes</p>
+        <h4 class='author-name'>Author username: {{ author.username }}</h4>
+        <p>Author Name: {{ author.first_name }} {{ author.last_name }}</p>
+        <p class="title">Author contact details: {{ author.email }}</p>
     {% endif %}
     
 
 </div>
+{% comment %}
+<!-- {% if request.user == author %}
 
-<div class='section-title'>Stories from the author</div>
-<div>
+<h4>Your favourite post{{ author.favourites.count|pluralize:"s"}}:</h4>
+<ul>
+    {% for story in author.favourites.all %}
+    <li>
+        <a href="{% url 'news:story' story.id %}">
+            {{ story.title }} by {{ story.author }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+Total: {{author.favourites.count}}
+<h4>Your posted stories:</h4>
+</div>
+{% else %}
+<h4>Posted stories:</h4>
+{% endif %} -->
+{% endcomment %} 
+
+<h3>Articles by {{ author.username }}</h3>
+<div class='userAppStorySection'>
 {% for story in author.newsstory_set.all %}
-    {% comment %} {{ story.title }} {% endcomment %}
+
     {% include "news/storyCard.html" with story=story %}
 {% endfor %}
-</div>
 
+</div>
 {% endblock%}
 
 
-<!-- {% comment %} forloop.counter {% endcomment %} -->
+{% comment %} forloop.counter {% endcomment %} 

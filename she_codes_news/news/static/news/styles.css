@@ -165,3 +165,14 @@ span {
     color: white;
 }
 
+.userAppStorySection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.userAppcreateAccountButton{
+    color: white;
+    background-color: #d36a00;
+    padding: 2rem;
+}

@@ -18,7 +18,15 @@
     <a class="createStoryLink" href="{% url 'news:newStory' %}">Write New Story</a>
     {% endif %}
     
-
+    
+    <div>
+        <h4>Filter by category:</h4>
+        <div id="index-header-cats">
+            {% for cat in categories %}
+            <a class="category-button" href="{% url 'news:index' %}?cat={{cat.id}}">{{ cat.name }}{% endfor %}</a>
+            <a class="category-button" href="{% url 'news:index' %}">All</a> 
+        </div>
+    </div>
 
     {% comment %} 
     <div id="latest-stories">
@@ -33,7 +41,7 @@
     {% endcomment %}
 
 
-    
+
     <div id="all-stories">
         {% if all_stories %}
             {% for story in all_stories %}
