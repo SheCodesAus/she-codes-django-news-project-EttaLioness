@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+{% endblock%}
+
+{% block content %}
+
+    
+    <div class="user-profile-card">
+        {% comment %} <img src="trees.jpeg" alt="trees"> {% endcomment %}
+        <img src="https://www.kindpng.com/picc/m/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png" class="avatar">
+        {% comment %} <h4 id='author-name'>{{ user.username }}</h4> {% endcomment %}
+        {% if user.username %}
+            <div class="user-name">{{ user.username}}</div>
+            <p class="title">{{ user.email }}</p>
+            <p class="title">Author for She Codes</p>
+        {% endif %}
+
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+    </div>
+            
+    <div class="">Stories from you</div>
+
+    <div id="authorStories">
+        {% if user.newsstory_set.all %}
+            {% for story in user.newsstory_set.all %}
+                {% include "news/storyCard.html" with story=story %}
+                <!-- <p>{{ story.title }}</p> -->
+            {% endfor %}
+        {% else %}
+            <h2>The author hasn't written any story yet</h2>
+            {% comment %} <button>login</button> {% endcomment %}
+        {% endif %}
+    </div> 
+
+{% endblock%}
+
+{% comment %} forloop.counter {% endcomment %}
+
+
+<!-- {% comment %} {% if article.user.image %}
+  {{ article.user.image | image_url: width: 200, height: 200 }}
+{% endif %} {% endcomment %} -->

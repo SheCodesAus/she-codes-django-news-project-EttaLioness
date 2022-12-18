@@ -1,0 +1,46 @@
+.user-name, .author-name{
+    color:#4E9CAF;
+    font-size: 24px;
+    font-family: monospace;
+    text-transform: capitalize;
+  }
+  .profile-card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+      /* max-width: 300px; */
+      margin: auto;
+      text-align: left;
+      padding: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  
+    }
+    .user-profile-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+        margin: auto;
+        text-align: left;
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color:#FCD7DB;
+        
+        
+    
+      }
+    .section-title {
+        color:#4E9CAF;
+        font-size: 24px;
+        font-family: monospace;
+        text-transform: capitalize;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .card-author{
+        color:#4E9CAF;  
+      }
+
+      .avatar{
+        border-radius: 4px;
+        width: 150px;
+      }

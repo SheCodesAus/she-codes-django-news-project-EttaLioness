@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+#### SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(jkv!qs0&8mc=ftuod-kzmdni25#vl+s!i@f!yk0*@tuvm16x+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -31,13 +31,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "news.apps.NewsConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users.apps.UsersConfig', # we put in bottom as it will use the other apps from above from users.model.custom user
 ]
+
+AUTH_USER_MODEL='users.CustomUser'#rather than using default user, using custom
+LOGIN_REDIRECT_URL = 'news:index'
+LOGOUT_REDIRECT_URL = 'news:index'
+LOGIN_URL = "login"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +61,7 @@ ROOT_URLCONF = 'she_codes_news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Australia/Perth'
+TIME_ZONE = 'Australia/Sydney'
 
 USE_I18N = True
 
@@ -118,5 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

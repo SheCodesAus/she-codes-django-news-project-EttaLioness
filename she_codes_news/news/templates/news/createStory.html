@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+    
+{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<img id= "formImage" src="https://i.postimg.cc/pdQkZLqw/form-image1.jpg" alt="Let Your writing juices run wild image">
+
+<div id="formContainer">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class ="formSubmit" type="submit" value="submit">
+    </form>
+</div>
+{% else %}
+<p>To write a Story, please create an account.</p>
+<a href="{% url 'users:createAccount' %}">Create Account</a>
+<!-- redirect them to create an account -->
+{% endif %}
+{% endblock %}
